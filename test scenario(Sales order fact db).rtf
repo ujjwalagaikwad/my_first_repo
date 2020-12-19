@@ -1,0 +1,221 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}{\f3\fswiss\fprq2\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue0;\red128\green128\blue128;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 sales order db test scenario:-\par
+\b 1)Customer table:-\par
+\b0 1)Check ETL run and \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_CUST\cf0\f0\fs22  and check data at target table Dim_customer.\par
+3)compare count between Customer table and Dim_customer.\par
+4)Check null count between Customer table and Dim_customer.\par
+5)check duplicate data  at Dim_customer.\par
+6)check transformed data at Dim_customer:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 check concatanation when  title,FirstName,MiddleName,LastName all are absent\par
+{\pntext\f0 b.\tab}check concatanation when LastName is present and title,FirstName,MiddleName are absent\par
+{\pntext\f0 c.\tab}check concatanation when MiddleName is present and title,FirstName,LastName are absent\par
+{\pntext\f0 d.\tab}check concatanation when MiddleName ,LastName is present and title,FirstName are absent\par
+{\pntext\f0 e.\tab}check concatanation when FirstName is present and title,MiddleName,LastName are absent\par
+{\pntext\f0 f.\tab}check concatanation when FirstName,LastName  is present and title,MiddleName are absent\par
+{\pntext\f0 g.\tab}check concatanation when FirstName,MiddleName is present and title,LastName are absent\par
+{\pntext\f0 h.\tab}check concatanation when FirstName,MiddleName,LastName is present and  title is absent\par
+{\pntext\f0 i.\tab}check concatanation when title is present and FirstName,MiddleName,LastName  are absent\par
+{\pntext\f0 j.\tab}check concatanation when  title,LastName is present and FirstName,MiddleName are absent\par
+{\pntext\f0 k.\tab}check concatanation when title,MiddleName is present and FirstName,LastName  are absent\par
+{\pntext\f0 l.\tab}check concatanation when title,MiddleName,LastName is present and FirstName are absent\par
+{\pntext\f0 m.\tab}check concatanation when title ,FirstName is present and MiddleName,LastName  are absent\par
+{\pntext\f0 n.\tab}check concatanation when title ,FirstName,LastName  is present and MiddleName are absent\par
+{\pntext\f0 o.\tab}check concatanation when title ,FirstName, MiddleName is present and LastName  are absent\par
+{\pntext\f0 p.\tab}check concatanation when  title,FirstName,MiddleName,LastName all are present\par
+{\pntext\f0 q.\tab}check concatanation when AddressLine1,AddressLine2 both are absent\par
+{\pntext\f0 r.\tab}check concatanation when AddressLine2 is present and AddressLine1  are absent\par
+{\pntext\f0 s.\tab}check concatanation when AddressLine1 is present and AddressLine2  are absent\par
+{\pntext\f0 t.\tab}check concatanation when AddressLine1,AddressLine2  both are present \par
+
+\pard\sa200\sl276\slmult1 7)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 CustomerId\par
+{\pntext\f0 b.\tab}BirthDate(null)\par
+{\pntext\f0 c.\tab}MaritalStatus(null)\par
+{\pntext\f0 d.\tab}Gender(null)\par
+{\pntext\f0 e.\tab}EmailAddress(null)\par
+{\pntext\f0 f.\tab}YearlyIncome(null)\par
+{\pntext\f0 g.\tab}SpanishEducation\par
+{\pntext\f0 h.\tab}FrenchEducation\par
+{\pntext\f0 i.\tab}EnglishOccupation\par
+{\pntext\f0 j.\tab}SpanishOccupation\par
+{\pntext\f0 k.\tab}FrenchOccupation\par
+{\pntext\f0 l.\tab}HouseOwnerFlag\par
+{\pntext\f0 m.\tab}NumberCarsOwned\par
+{\pntext\f0 n.\tab}Phone\par
+{\pntext\f0 o.\tab}Registration_date\par
+{\pntext\f0 p.\tab}CommuteDistance\par
+
+\pard\sa200\sl276\slmult1 2)city table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_CUST\cf0\f0\fs22   and check data at target table Dim_customer.\par
+3)compare count between city table by joining city,Customer table and then check  count at target table Dim_customer.\par
+4)Check null count between city table by joining city,Customer table and then check null count at target table Dim_customer.\par
+5)check duplicate data of city table at target Dim_customer.\par
+6)check transformed data at Dim_customer:-\par
+7)Lookup customer and city to get city state and zip code:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 City\par
+{\pntext\f0 b.\tab}State\par
+{\pntext\f0 c.\tab}Abbreviation\par
+{\pntext\f0 d.\tab}ZIP_code\par
+
+\pard\sa200\sl276\slmult1 3)employee table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_EMP\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table Dim_Employee.\par
+3)compare count between Employee table and Dim_Employee.\par
+4)Check null count between Employee table and Dim_Employee.\par
+5)check duplicate data  at Dim_Employee.\par
+6)check transformed data at Dim_customer:-\par
+Total_exp:-datediff()\par
+
+\pard 
+{\pntext\f3 a.\tab}{\*\pn\pnlvlbody\pnf3\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\widctlpar\fi-360\li720\sa160\sl252\slmult1\f3\lang1033 Check Total_Exp when current date is equal to hire date.\par
+{\pntext\f3 b.\tab}Check Total_Exp when current date is greater to hire date.\par
+{\pntext\f3 c.\tab}Check Total_Exp when current date is less to hire date.\f0\lang9\par
+
+\pard\sa200\sl276\slmult1 7)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 FirstName(notnull)\par
+{\pntext\f0 b.\tab}LastName(notnull)\par
+{\pntext\f0 c.\tab}MiddleName(null)\par
+{\pntext\f0 d.\tab}Title(null)\par
+{\pntext\f0 e.\tab}HireDate(null)\par
+{\pntext\f0 f.\tab}BirthDate(null)\par
+{\pntext\f0 g.\tab}EmailAddress(null)\par
+{\pntext\f0 h.\tab}Phone(null)\par
+{\pntext\f0 i.\tab}MaritalStatus(null)\par
+{\pntext\f0 j.\tab}EmergencyContactName(null)\par
+{\pntext\f0 k.\tab}EmergencyContactPhone(null)\par
+{\pntext\f0 l.\tab}SalariedFlag(null)\par
+{\pntext\f0 m.\tab}Gender(null)\par
+{\pntext\f0 n.\tab}PayFrequency(null)\par
+{\pntext\f0 o.\tab}BaseRate\par
+{\pntext\f0 p.\tab}VacationHours\par
+{\pntext\f0 q.\tab}SickLeaveHours\par
+{\pntext\f0 r.\tab}CurrentFlag(notnull)\par
+{\pntext\f0 s.\tab}SalesPersonFlag(notnull)\par
+{\pntext\f0 t.\tab}DepartmentName\par
+{\pntext\f0 u.\tab}StartDate\par
+{\pntext\f0 v.\tab}EndDate\par
+{\pntext\f0 w.\tab}Status\par
+
+\pard\sa200\sl276\slmult1 4)orders table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_ORDERS\cf2\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table Dim_\cf1\f1\fs19 orders\cf0\f0\fs22 .\par
+3)compare count between \cf1\f1\fs19 [order]\cf0\f0\fs22  table and Dim_\cf1\f1\fs19 orders\cf0\f0\fs22 .\par
+4)Check null count between \cf1\f1\fs19 [order]\cf0\f0\fs22  table and Dim_\cf1\f1\fs19 orders\cf0\f0\fs22 .\par
+5)check duplicate data  at Dim_\cf1\f1\fs19 orders\cf0\f0\fs22 .\par
+6)check transformed data at Dim_\cf1\f1\fs19 orders\cf0\f0\fs22 :-\par
+7)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 Id(notnull)\par
+{\pntext\f0 b.\tab}OrderNumber(notnull)\par
+{\pntext\f0 c.\tab}ORDERDATE(null)\par
+
+\pard\sa200\sl276\slmult1 5)OrderItems table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_OrderItem\cf2\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table Dim_OrdersItems.\par
+3)compare count between \cf1\f1\fs19 orderitem\f2\lang1033  \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+4)Check null count between \cf1\f1\fs19 orderitem\f2\lang1033  \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+5)check duplicate data  at Dim_OrdersItems.\par
+6)check transformed data at Dim_OrdersItems:-\par
+7)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 Id\par
+{\pntext\f0 b.\tab}OrderId\par
+{\pntext\f0 c.\tab}Quantity\par
+
+\pard\sa200\sl276\slmult1 6) product table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_OrderItem\cf2\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table Dim_OrdersItems.\par
+3)compare count between \cf1\f1\fs19 orderitem\f2\lang1033  \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+4)Check null count between \cf1\f2\fs19\lang1033 product \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+5)check duplicate data  at Dim_OrdersItems.\par
+6)check transformed data at Dim_OrdersItems:-\par
+1)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 UnitPrice is null\par
+{\pntext\f0 b.\tab}UnitPrice is not null\par
+{\pntext\f0 c.\tab}ProductName\tab\par
+
+\pard\sa200\sl276\slmult1 7)Supplier table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 dbo\cf2 .\cf1 SP_DIM_OrderItem\cf2\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table Dim_OrdersItems.\par
+3)compare count between \cf1\f1\fs19 orderitem\f2\lang1033  \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+4)Check null count between \cf1\f1\fs19 orderitem\f2\lang1033  \cf0\f0\fs22\lang9 table and Dim_OrdersItems.\par
+5)check duplicate data  at Dim_OrdersItems.\par
+6)check transformed data at Dim_OrdersItems:-\par
+\tab a)check concatenation of city and country column.\par
+1)check data having 1:1 mapping:-\par
+
+\pard 
+{\pntext\f0 a.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnlcltr{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1 Supplier_Code\par
+{\pntext\f0 b.\tab}CompanyName\par
+{\pntext\f0 c.\tab}CompanyName\par
+{\pntext\f0 d.\tab}Phone\par
+{\pntext\f0 e.\tab}CITY_COUNTRY(concated data of city,country column as CITY_COUNTRY).\par
+
+\pard\sa200\sl276\slmult1 8)fact_sales table:-\par
+
+\pard\sa200\sl276\slmult1 1)Check ETL run \par
+2)check  ETL procedure code \cf1\f1\fs19 OLAP_SALES\cf2 .\cf1 [dbo]\cf2 .\cf1 [SP_Fact_Sales]\f2\lang1033  \cf0\f0\fs22\lang9 and check data at target table \cf1\f1\fs19 Fact_Sales\cf0\f0\fs22 .\par
+3)compare count between \cf1\f1\fs19 order\f2\lang1033  \cf0\f0\fs22\lang9 table and \cf1\f1\fs19 Fact_Sales\cf0\f0\fs22 .\par
+4)Check null count between \cf1\f1\fs19 order\f2\lang1033  \cf0\f0\fs22\lang9 table and \cf1\f1\fs19 Fact_Sales\cf0\f0\fs22 .\par
+5)check duplicate data  at \cf1\f1\fs19 Fact_Sales\cf0\f0\fs22 .\par
+
+\pard\sa200\sl276\slmult1\par
+\par
+\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+
+\pard\sa200\sl276\slmult1\par
+\par
+\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+
+\pard\sa200\sl276\slmult1\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+\par
+}
+ 
